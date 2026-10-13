@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ระบบพิมพ์รายงานผลการเรียน - Iqra Muslim School</title>
 
-  <link rel="icon" type="image/png" href="https://img2.pic.in.th/IMG_98426b7507513c51ba19.png" />
+  <link rel="icon" type="image/png" href="https://img2.pic.in.th/IMG_98426b7507513c51ba19.png" referrerpolicy="no-referrer" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -20,7 +20,10 @@
 <body class="bg-gray-50">
   <!-- Shown while redirecting to the Apps Script web app -->
   <div id="loadingScreen" class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
-    <img src="https://img2.pic.in.th/IMG_98426b7507513c51ba19.png" alt="Logo" class="w-16 h-16 mb-4" />
+    <!-- Tries logo.png from this GitHub repo first, then the original pic.in.th link (sent without a Referer,
+         since image hosts often block other websites from loading their images), then hides itself. -->
+    <img src="logo.png" alt="" referrerpolicy="no-referrer" class="w-16 h-16 mb-4 object-contain"
+         onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://img2.pic.in.th/IMG_98426b7507513c51ba19.png';}else{this.style.display='none';}" />
     <i class="fa-solid fa-circle-notch fa-spin text-blue-600 text-3xl mb-4"></i>
     <p class="text-gray-700 font-semibold mb-1">กำลังเปิดระบบพิมพ์รายงานผลการเรียน...</p>
     <p class="text-gray-500 text-sm mb-4">กรุณาเข้าสู่ระบบด้วยบัญชี @iqra.ac.th หากระบบขอให้ลงชื่อเข้าใช้</p>
